@@ -1,1 +1,29 @@
 
+ENTRY(_start)
+
+SECTIONS
+{
+    . = 1M;
+
+    .text :
+    {
+        *(.multiboot)
+        *(.text*)
+    }
+
+    .rodata :
+    {
+        *(.rodata*)
+    }
+
+    .data :
+    {
+        *(.data*)
+    }
+
+    .bss :
+    {
+        *(.bss*)
+    }
+}
+//mistake it should be linker ld
